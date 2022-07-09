@@ -10,7 +10,7 @@ WORKDIR /poptorch
 ENV PYTHONUNBUFFERED TRUE
 
 COPY requirements.dev .
-COPY energy_neural .
+COPY poptorch_energy .
 COPY setup.py .
 
 # Install python dependencies

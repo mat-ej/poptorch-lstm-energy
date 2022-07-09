@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --partition ipu
+#SBATCH --nodes 1
+#SBATCH --ntasks-per-node 1
+#SBATCH --cpus-per-task 128
+#SBATCH --gres=ipu:1
+#SBATCH --job-name ipu_test
+#SBATCH --export=NONE
+#SBATCH --job-name poptorch
+#SBATCH --output log/poptorch-%J.log
+
+module purge
+ml PopTorch/2.5.0-foss-2021a
+
+pip install -r requirements.dev
+pip install -e .
+
+python energy_neural/energy_lstm.py
+#gc-monitorenergy_
