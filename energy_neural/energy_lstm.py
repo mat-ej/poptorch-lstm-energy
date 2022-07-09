@@ -13,10 +13,17 @@ from energy_neural.nns import RNNModel, LSTMModel, GRUModel, SequenceDataset, Sh
 
 from energy_neural.nns import Optimization
 from sklearn.linear_model import LinearRegression
+from energy_neural.paths import *
 
 torch.manual_seed(0)
 np.random.seed(0)
 
+
+# %%
+
+from pathlib import Path
+
+file_to_open = data_path / "PJME_hourly.csv"
 
 # def plot_dataset(df, title):
 #     data = []
@@ -46,7 +53,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 # device = "cpu"
 print(f"{device}" " is available.")
 # %%
-df = pd.read_csv('../data/PJME_hourly.csv')
+df = pd.read_csv(file_to_open)
 
 df = df.set_index(['Datetime'])
 df = df.rename(columns={'PJME_MW': 'value'})

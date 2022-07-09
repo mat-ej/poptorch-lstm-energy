@@ -5,6 +5,7 @@ import torch.nn as nn
 import numpy as np
 import matplotlib.pyplot as plt
 from torch.utils.data import Dataset
+from energy_neural.paths import *
 
 class Optimization:
     def __init__(self, model, loss_fn, optimizer, device):
@@ -47,7 +48,7 @@ class Optimization:
             n_features (int): Number of feature columns
 
         """
-        model_path = f'../models/{self.model}_{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}'
+        model_path = models_path / f'/{self.model}_{datetime.now().strftime("%Y-%m-%d %H:%M:%S")}'
 
 
         for epoch in range(1, n_epochs + 1):
