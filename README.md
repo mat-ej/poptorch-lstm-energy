@@ -16,4 +16,3 @@ modify job.batch
 ### Docker notes
     docker build -t poptorch-dev -f Dockerfile .
     docker run --rm -it --name graphcore -v $(pwd):/poptorch poptorch-dev:latest bash
-
