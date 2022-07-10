@@ -23,6 +23,8 @@ def example():
     validation_batch_size = 100
 
     opts = poptorch.Options()
+
+
     # Device "step"
     opts.deviceIterations(20)
 

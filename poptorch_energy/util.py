@@ -8,7 +8,8 @@ import numpy as np
 
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-
+import holidays
+us_holidays = holidays.US()
 
 def is_holiday(date):
     date = date.replace(hour = 0)
