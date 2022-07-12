@@ -24,6 +24,7 @@ def example():
 
     opts = poptorch.Options()
     # Device "step"
+    #how many samples to process on each call of the model
     opts.deviceIterations(20)
 
     # How many IPUs to replicate over.

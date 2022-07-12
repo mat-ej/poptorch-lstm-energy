@@ -1,6 +1,9 @@
 # poptorch-lstm-energy
 energy demand lstm prediction on graphcore
 
+# TODO
+'poptorch_cpp_error': Failed to acquire 1 IPU(s)
+
 ## run interactive job
     srun -p ipu --gres=ipu:1 --cpus-per-task 128 --pty bash -i
 
